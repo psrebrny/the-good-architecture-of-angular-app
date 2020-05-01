@@ -20,12 +20,14 @@
       true,
       "attribute",
       "app",
+      "excellent",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
       "app",
+      "excellent",
       "kebab-case"
     ],
     "eofline": true,

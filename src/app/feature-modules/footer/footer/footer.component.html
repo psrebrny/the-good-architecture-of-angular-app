@@ -1,0 +1,14 @@
+<footer *ngIf="links$ | async as links" class="row border-top pt-4">
+  <div *ngFor="let link of links" class="col-6 col-md">
+    <h5>
+      <a [routerLink]="link.link">{{ link.title }}</a>
+    </h5>
+    <ul class="list-unstyled text-small">
+      <li class="text-muted" *ngFor="let sublink of link.subLinks">
+        <a class="flex-item" routerLink="{{ sublink.link }}">{{
+          sublink.title
+        }}</a>
+      </li>
+    </ul>
+  </div>
+</footer>

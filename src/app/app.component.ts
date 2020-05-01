@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {SharedDataService} from './services/shared-data.service';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-    title = 'The-good-architecture-of-the-Angular-app';
+export class AppComponent implements OnInit {
+    constructor(private sharedDataService: SharedDataService) {}
+
+    ngOnInit() {
+        this.sharedDataService.loadMenu();
+        this.sharedDataService.loadIsLoggedIn();
+    }
 }
