@@ -10,14 +10,14 @@
 
     <div class="my mr-md-auto" *ngIf="isLoggedIn$ | async as isLoggedIn">
       <div *ngIf="!isLoggedIn">
-        <a class="btn btn-outline-primary m-2" routerLink="'/register'"
+        <a class="btn btn-outline-primary m-2" routerLink="/register"
           >Register</a
         >
-        <a class="btn btn-primary m-2" routerLink="'/login'">Login</a>
+        <a class="btn btn-primary m-2" routerLink="/login">Login</a>
       </div>
 
       <div class="settings" *ngIf="isLoggedIn">
-        <a routerLink="'/settings'">Settings</a>
+        <a routerLink="/settings">Settings</a>
       </div>
     </div>
   </div>
