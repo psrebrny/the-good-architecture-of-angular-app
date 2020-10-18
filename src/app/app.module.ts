@@ -5,6 +5,8 @@ import {AppComponent} from './app.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HeaderModule} from './feature-modules/header/header.module';
 import {FooterModule} from './feature-modules/footer/footer.module';
+import {LoggedInGuard} from './auth-guard/logged-in.guard';
+import {NotLoggedInGuard} from './auth-guard/not-logged-in.guard';
 
 const routes: Routes = [
     {
@@ -25,6 +27,7 @@ const routes: Routes = [
             import('./routing-modules/login/login.module').then(
                 (m) => m.LoginModule
             ),
+        canActivate: [NotLoggedInGuard],
     },
     {
         path: 'register',
@@ -32,6 +35,7 @@ const routes: Routes = [
             import('./routing-modules/register/register.module').then(
                 (m) => m.RegisterModule
             ),
+        canActivate: [NotLoggedInGuard],
     },
     {
         path: 'settings',
@@ -39,6 +43,7 @@ const routes: Routes = [
             import('./routing-modules/settings/settings.module').then(
                 (m) => m.SettingsModule
             ),
+        canActivate: [LoggedInGuard],
     },
 ];
 
